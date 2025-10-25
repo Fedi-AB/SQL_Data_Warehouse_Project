@@ -60,11 +60,13 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of crm_customer_info loading--
         SET @end_time = GETDATE();
         --Calculation of crm_customer_info loading duration--
         PRINT'                 *** crm_customer_info Load Duration is: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds ***'
 
+			
         --Seting the starting time of crm_products_info loading--
         SET @start_time = GETDATE();
         PRINT'======================================================================================';
@@ -85,11 +87,13 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of crm_products_info loading--
         SET @end_time = GETDATE();
         --Calculation of crm_products_info loading duration--
         PRINT'                 *** crm_products_info Load Duration is: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds ***'
 
+			
         --Seting the starting time of crm_sales_details loading--
         SET @start_time = GETDATE();
         PRINT'======================================================================================';
@@ -110,6 +114,7 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of crm_sales_details loading--
         SET @end_time = GETDATE();
         --Calculation of crm_sales_details loading duration--
@@ -118,6 +123,7 @@ BEGIN
         PRINT'<<<<<---------------------------------------------------------------------------->>>>>';
         PRINT'================================= Loading ERP Tables =================================';
         PRINT'<<<<<---------------------------------------------------------------------------->>>>>';
+
 
         --Seting the starting time of erp_cust_az12 loading--
         SET @start_time = GETDATE();
@@ -139,6 +145,7 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of erp_cust_az12 loading--
         SET @end_time = GETDATE();
         --Calculation of erp_cust_az12 loading duration--
@@ -165,6 +172,7 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of erp_loc_a101 loading--
         SET @end_time = GETDATE();
         --Calculation of erp_loc_a101 loading duration--
@@ -191,6 +199,7 @@ BEGIN
         --= Lock the table while processing the load operation to optimize the performance of the loading =--
             TABLOCK
         );
+
         --Seting the ending time of erp_px_cat_g1v2 loading--
         SET @end_time = GETDATE();
         --Calculation of erp_px_cat_g1v2 loading duration--
